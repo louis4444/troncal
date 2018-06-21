@@ -1,0 +1,46 @@
+@charset "ISO-8859-1";
+
+body{
+	text-align: center;
+	background-image: url(https://pre00.deviantart.net/ed81/th/pre/i/2011/109/8/8/background_m3_login_for_m1_by_andreascy-d3ecbzg.jpg);
+	/*background-repeat: no-repeat;*/
+	background-size: cover;
+}
+
+#formu1{
+	background: linear-gradient(to right, white , gray);
+	border:solid;
+	border-radius:5px
+}	
+#formu2{
+	background: linear-gradient(to right, white , gray);
+	border:solid;
+	border-radius:5px
+}	
+#formu3{
+	background: linear-gradient(to right, white , gray);
+	border:solid;
+	border-radius:5px
+}	
+#formu4{
+	background: linear-gradient(to right, white , gray);
+	border:solid;
+	border-radius:5px
+	right:0;
+}	
+	#divrow{
+	padding:5em;
+}		
+
+#formucli {
+	background: linear-gradient(to right, white , gray);
+	border:solid;
+	border-radius:5px
+	
+}	
+
+h1 {
+	font-size: 2.5rem;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	
+}	

@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<link rel="stylesheet" type="text/css" href="css/css.css"></link>
+		<title>Registrar clientes</title>
+	</h:head>	
+	<h:form id="form3">
+    <p:carousel value="#{beanOrdenador.lstOrdenadores}" headerText="Carousel" var="pcs" itemStyle="text-align:center" responsive="true">
+        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+            <f:facet name="header">
+                <p:graphicImage name="/images/ordenador/#{pcs.montador}.jpg"/> 
+            </f:facet>
+              <h:outputText value="Montador" />
+            <h:outputText value="#{pcs.montador}" />
+     <h:outputText value="Placa" />
+            <h:outputText value="#{pcs.placa}" />
+     <h:outputText value="Processador" />
+            <h:outputText value="#{pcs.processador}" />
+     <h:outputText value="Fuente" />
+            <h:outputText value="#{pcs.fuente}" />
+     <h:outputText value="Caja" />           
+            <h:outputText value="#{pcs.caja}" />
+     <h:outputText value="Ram" />
+            <h:outputText value="#{pcs.ram}" />
+     <h:outputText value="Tarjeta-grafica" />
+            <h:outputText value="#{pcs.tarjeta_grafica}" />
+     <h:outputText value="Disco-duro" />
+            <h:outputText value="#{pcs.discoduro}" />
+ 
+<!--             <h:outputText value="$#{cli.direccion}"/> -->
+        
+        
+        
+        
+        
+        
+        </p:panelGrid>      
+    </p:carousel>
+    </h:form>
+</html>

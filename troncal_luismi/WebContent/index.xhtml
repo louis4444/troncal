@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		
+		<title>Inciar Session</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="css/css.css"></link>
+	</h:head>
+	<div class="container, contenedor">
+	<div class="row" id="divrow">
+	<div class="col-md-10">
+	<h:form id="formu1">
+		<h1>Introduce usuario y contraseña administrador</h1>
+		<p:growl id="messages"></p:growl>
+		<p:panelGrid columns="2" cellpadding="5">
+		
+			<p:outputLabel value="Nombre de usuario"></p:outputLabel>
+			<p:inputText label="Nombre" value="#{beanEmpresa.administradores.nombre}"  required="true" ></p:inputText>
+			
+			<p:outputLabel value="Contraseña"></p:outputLabel>
+			<p:inputText label="Contraseña" value="#{beanEmpresa.administradores.contraseña}" type="password" required="true"></p:inputText>
+										
+		</p:panelGrid>
+		<p:commandButton value="Iniciar" action="#{beanEmpresa.iniciar}" update="formu1"></p:commandButton>
+		
+	</h:form>
+	
+	</div>
+	
+	</div>
+	</div>
+</html>

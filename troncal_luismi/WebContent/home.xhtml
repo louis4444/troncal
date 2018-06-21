@@ -1,0 +1,106 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+	<title>Registrar clientes</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/css.css"></link>
+</h:head>
+<div class="container">
+<div class="row">
+<h:form id="formu2">
+
+	<p:commandButton actionListener="#{beanEmpresa.listarcli()}"
+		value="Listar" ajax="false" />
+
+	<p:dataTable value="#{beanEmpresa.lstclientes}" var="cli" rows="10"
+		paginator="true"
+		paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+		rowsPerPageTemplate="5,10,15">
+
+		<p:column headerText="Id" filterBy="#{cli.id}" footerText="contiene"
+			filterMatchMode="contains">
+			<h:outputLabel value="#{cli.id}" />
+		</p:column>
+
+		<p:column headerText="Nombre" filterBy="#{cli.apellidos}"
+			footerText="contiene" filterMatchMode="contains">
+			<h:outputLabel value="#{cli.apellidos}" />
+		</p:column>
+
+		<p:column headerText="Correo" filterBy="#{cli.correo}"
+			footerText="contiene" filterMatchMode="contains">
+			<h:outputLabel value="#{cli.correo}">
+			</h:outputLabel>
+		</p:column>
+
+		<p:column headerText="Direccion" filterBy="#{cli.direccion}"
+			footerText="contiene" filterMatchMode="contains">
+			<h:outputLabel value="#{cli.direccion}" />
+		</p:column>
+
+
+
+		<p:column headerText="Eliminar">
+			<p:menuitem value="Delete"
+				actionListener="#{beanEmpresa.eliminar(cli)}" ajax="false"
+				icon="ui-icon-close" />
+			<h:commandLink actionListener="#{beanEmpresa.eliminar(cli)}"
+				value="Eliminar" />
+		</p:column>
+
+		<p:column headerText="Modificar">
+			<h:commandLink action="#{beanEmpresa.leer(cli)}" value="Modificar" />
+
+		</p:column>
+
+	</p:dataTable>
+	
+	
+</h:form>
+<div class="col-xs-5">
+<h:form id="formucli">
+	<p:growl id="messages"></p:growl>
+	<p:panelGrid columns="1">
+
+		<p:outputLabel value="Nombre:"></p:outputLabel>
+		<p:inputText label="Nombre" value="#{beanEmpresa.clientes.nombre}"
+			required="true"></p:inputText>
+
+		<p:outputLabel value="Apellidos"></p:outputLabel>
+		<p:inputText label="Apellidos"
+			value="#{beanEmpresa.clientes.apellidos}" required="true"></p:inputText>
+
+		<p:outputLabel value="Correo"></p:outputLabel>
+		<p:inputText label="Correo" value="#{beanEmpresa.clientes.correo}"
+			required="true"></p:inputText>
+
+		<p:outputLabel value="Direccion"></p:outputLabel>
+		<p:inputText label="Direccion"
+			value="#{beanEmpresa.clientes.direccion}" required="true"></p:inputText>
+<p:commandButton value="Registrar Clientes" action="#{beanEmpresa.register}"
+		update="messages,formucli,:formu2"></p:commandButton>
+	</p:panelGrid>
+	
+
+</h:form>
+<h:form id="formu3">
+<p:commandLink value="PCSALAVENTA" action="#{beanEmpresa.iraPcsauto}"
+		ajax="false"></p:commandLink>
+</h:form>
+</div>
+
+</div>
+
+
+</div>
+<h:form id="formu4">
+<h:commandLink value="CERRARSESSION"
+		action="#{beanEmpresa.cerrarSesion()}" />
+</h:form>
+</html>
